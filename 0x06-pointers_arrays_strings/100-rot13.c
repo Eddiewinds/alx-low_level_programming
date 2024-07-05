@@ -8,19 +8,19 @@
  */
 char *rot13(char *str)
 {
-    char *ptr = str;
-    char *start = str;
-    int diff = 0;
-
-    while (*ptr != '\0')
-    {
-        if ((*ptr >= 'a' && *ptr <= 'z') || (*ptr >= 'A' && *ptr <= 'Z'))
-        {
-            diff = (*ptr >= 'a' && *ptr <= 'z') ? 'a' : 'A';
-            *ptr = ((*ptr - diff + 13) % 26) + diff;
-        }
-        ptr++;
-    }
-
-    return start;
+    int i;
+    int j;
+    char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    char datarot[] = "NOPQRSTUVWZTZABCDEFGHIJKLMabcdefghijklmnopqrestuvxyz";
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; j < 52; j++)
+		{
+			if (s[i] == data1[j])
+			{	s[i] = datarot[j];
+				break;
+			}
+		}
+	}
+    return (s);
 }
