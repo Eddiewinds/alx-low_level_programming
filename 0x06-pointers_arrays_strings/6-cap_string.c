@@ -10,7 +10,7 @@
 char *cap_string(char *str)
 {
     int i = 0;
-    int capitalize = 1; // Start with first character capitalized
+    int capitalize = 1; /* Start with first character capitalized */
 
     while (str[i] != '\0')
     {
@@ -19,16 +19,16 @@ char *cap_string(char *str)
             str[i] == '!' || str[i] == '?' || str[i] == '"' ||
             str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}')
         {
-            capitalize = 1; // Set flag to capitalize next character
+            capitalize = 1; /* Set flag to capitalize next character */
         }
         else if (capitalize && str[i] >= 'a' && str[i] <= 'z')
         {
-            str[i] = str[i] - 'a' + 'A'; // Convert lowercase to uppercase
-            capitalize = 0; // Reset flag after capitalizing
+            str[i] = str[i] - 'a' + 'A'; /* Convert lowercase to uppercase */
+            capitalize = 0; /* Reset flag after capitalizing */
         }
         else
         {
-            capitalize = 0; // Reset flag if already capitalized
+            capitalize = 0; /* Reset flag if already capitalized */
         }
 
         i++;
