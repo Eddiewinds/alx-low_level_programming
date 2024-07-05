@@ -9,20 +9,18 @@
 char *rot13(char *str)
 {
     char *ptr = str;
+    char *start = str;
+    int diff = 0;
 
     while (*ptr != '\0')
     {
-        if ((*ptr >= 'a' && *ptr <= 'm') || (*ptr >= 'A' && *ptr <= 'M'))
+        if ((*ptr >= 'a' && *ptr <= 'z') || (*ptr >= 'A' && *ptr <= 'Z'))
         {
-            *ptr = *ptr + 13;
+            diff = (*ptr >= 'a' && *ptr <= 'z') ? 'a' : 'A';
+            *ptr = ((*ptr - diff + 13) % 26) + diff;
         }
-        else if ((*ptr >= 'n' && *ptr <= 'z') || (*ptr >= 'N' && *ptr <= 'Z'))
-        {
-            *ptr = *ptr - 13;
-        }
-
         ptr++;
     }
 
-    return str;
+    return start;
 }
