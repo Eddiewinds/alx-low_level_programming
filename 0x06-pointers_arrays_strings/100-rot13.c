@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * rot13 - Encodes a string using ROT13 cipher.
@@ -6,7 +7,7 @@
  *
  * Return: A pointer to the resulting encoded string `str`.
  */
-char *rot13(char *str)
+char *rot13(char *s)
 {
     int i;
     int j;
